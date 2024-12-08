@@ -1,0 +1,11 @@
+# runtime properties
+
+# application host
+#app_host=intra.qa.ops.eois.labour.gov.on.ca
+
+# Run Parameters (time params are in seconds)
+constant_delay=5000
+users_mn=50
+users_dr=50
+startup=120
+hold_load=1800

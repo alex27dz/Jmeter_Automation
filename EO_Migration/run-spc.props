@@ -1,0 +1,9 @@
+# runtime properties
+
+# application host
+#app_host=intra.uat.ops.eois.labour.gov.on.ca
+
+# Run Parameters (time params are in seconds)
+users_spc=50
+startup=60
+hold_load=1800

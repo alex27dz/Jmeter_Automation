@@ -1,0 +1,15 @@
+# runtime properties
+
+# application host
+#app_host=dev-hcms-ld-pub-release-webui-01.azurewebsites.net
+#app_api=dev-hcms-ld-pub-release-webapi-01.azurewebsites.net
+
+# Run Parameters (time params are in seconds)
+constant_delay=12000
+users_csp=15
+users_rp=15
+users_sc=30
+users_sp=20
+users_spy=20
+startup=140
+hold_load=1800

@@ -1,0 +1,26 @@
+2024-12-08 18:17:49,293 INFO o.a.j.u.JMeterUtils: Setting Locale to en_IL
+2024-12-08 18:17:49,320 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2024-12-08 18:17:49,320 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: Version 5.6.3
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: java.version=14.0.1
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: os.name=Mac OS X
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: os.arch=x86_64
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: os.version=10.16
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: file.encoding=UTF-8
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: java.awt.headless=null
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: Max memory     =4294967296
+2024-12-08 18:17:49,327 INFO o.a.j.JMeter: Available Processors =8
+2024-12-08 18:17:49,336 INFO o.a.j.JMeter: Default Locale=English (Israel)
+2024-12-08 18:17:49,336 INFO o.a.j.JMeter: JMeter  Locale=English (Israel)
+2024-12-08 18:17:49,337 INFO o.a.j.JMeter: JMeterHome=/Users/alexdezho/Documents/Alex/Jmeter_Automation/apache-jmeter-5.6.3
+2024-12-08 18:17:49,337 INFO o.a.j.JMeter: user.dir  =/Users/alexdezho/Documents/Alex/Jmeter_Automation/apache-jmeter-5.6.3/bin
+2024-12-08 18:17:49,337 INFO o.a.j.JMeter: PWD       =/Users/alexdezho/Documents/Alex/Jmeter_Automation/apache-jmeter-5.6.3/bin
+2024-12-08 18:17:49,339 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: Alexs-MacBook-Pro.local FullName: localhost
+2024-12-08 18:17:49,354 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2024-12-08 18:17:49,826 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2024-12-08 18:17:51,286 INFO o.a.j.r.ClassFinder: Will scan jar /Users/alexdezho/Documents/Alex/Jmeter_Automation/apache-jmeter-5.6.3/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-12-08 18:17:51,452 INFO o.a.j.r.ClassFinder: Will scan jar /Users/alexdezho/Documents/Alex/Jmeter_Automation/apache-jmeter-5.6.3/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-12-08 18:17:51,541 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-43103cba1fefc991a7988c8ddb6cb20b-gui
+2024-12-08 18:17:52,476 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.10, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]

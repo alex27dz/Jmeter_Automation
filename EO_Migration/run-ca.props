@@ -1,0 +1,35 @@
+# runtime properties
+
+# application host
+#app_host=dev-hcms-ld-pub-release-webui-01.azurewebsites.net
+#app_api=dev-hcms-ld-pub-release-webapi-01.azurewebsites.net
+
+# Run Parameters (time params are in seconds)
+constant_delay=10000
+
+# Common
+users=50
+users_2=50
+startup_time=60
+startup_time_2=60
+stage2_delay=1200
+run_time=3600
+run_time_2=1200
+
+# SO Thread
+so_users=70
+so_users_2=70
+so_startup=120
+so_startup_2=120
+so_stage_1=1200
+so_hold_load=3600
+so_hold_load_2=1200
+
+# ALL Thread
+all_users=30
+all_users_2=30
+all_startup=120
+all_startup_2=120
+all_stage_1=1200
+all_hold_load=3600
+all_hold_load_2=1200
