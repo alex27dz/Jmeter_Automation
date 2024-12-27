@@ -1,0 +1,84 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 trigger:\
+- main\
+\
+pool:\
+  vmImage: 'ubuntu-latest'\
+\
+variables:\
+  JMETER_VERSION: '5.5' # Update to the JMeter version you're using\
+  JMETER_HOME: '$(Agent.TempDirectory)/apache-jmeter-$(JMETER_VERSION)'\
+  TEST_PLAN_1: 'Test Plan 1.jmx'\
+  TEST_PLAN_2: 'Test Plan 2.jmx'\
+  RESULTS_DIR_1: '$(Build.ArtifactStagingDirectory)/results/test_plan_1'\
+  RESULTS_DIR_2: '$(Build.ArtifactStagingDirectory)/results/test_plan_2'\
+\
+steps:\
+# Step 1: Download JMeter\
+- task: DownloadPackage@1\
+  displayName: 'Download JMeter'\
+  inputs:\
+    packageType: 'zip'\
+    packageUrl: 'https://downloads.apache.org//jmeter/binaries/apache-jmeter-$(JMETER_VERSION).zip'\
+    destination: '$(Agent.TempDirectory)'\
+\
+# Step 2: Extract JMeter\
+- task: ExtractFiles@1\
+  displayName: 'Extract JMeter'\
+  inputs:\
+    archiveFilePatterns: '$(Agent.TempDirectory)/apache-jmeter-$(JMETER_VERSION).zip'\
+    destinationFolder: '$(Agent.TempDirectory)'\
+    cleanDestinationFolder: true\
+\
+# Step 3: Upload JMX Test Plans\
+- task: PublishPipelineArtifact@1\
+  displayName: 'Upload Test Plans'\
+  inputs:\
+    artifactName: 'TestPlans'\
+    targetPath: '$(System.DefaultWorkingDirectory)'\
+\
+# Step 4: Run Test Plan 1\
+- script: |\
+    mkdir -p $(RESULTS_DIR_1)\
+    $(JMETER_HOME)/bin/jmeter -n \\\
+      -t $(System.DefaultWorkingDirectory)/$(TEST_PLAN_1) \\\
+      -l $(RESULTS_DIR_1)/results.jtl \\\
+      -j $(RESULTS_DIR_1)/jmeter.log\
+  displayName: 'Run Test Plan 1'\
+\
+# Step 5: Run Test Plan 2\
+- script: |\
+    mkdir -p $(RESULTS_DIR_2)\
+    $(JMETER_HOME)/bin/jmeter -n \\\
+      -t $(System.DefaultWorkingDirectory)/$(TEST_PLAN_2) \\\
+      -l $(RESULTS_DIR_2)/results.jtl \\\
+      -j $(RESULTS_DIR_2)/jmeter.log\
+  displayName: 'Run Test Plan 2'\
+\
+# Step 6: Publish Results for Test Plan 1\
+- task: PublishPipelineArtifact@1\
+  displayName: 'Publish Results for Test Plan 1'\
+  inputs:\
+    artifactName: 'JMeterResults_TestPlan1'\
+    targetPath: '$(RESULTS_DIR_1)'\
+\
+# Step 7: Publish Results for Test Plan 2\
+- task: PublishPipelineArtifact@1\
+  displayName: 'Publish Results for Test Plan 2'\
+  inputs:\
+    artifactName: 'JMeterResults_TestPlan2'\
+    targetPath: '$(RESULTS_DIR_2)'\
+\
+# Step 8: Optional - Publish Test Results in Pipeline\
+- task: PublishTestResults@2\
+  displayName: 'Publish JMeter Results in Pipeline'\
+  inputs:\
+    testResultsFormat: 'JUnit'\
+    testResultsFiles: '$(RESULTS_DIR_1)/results.jtl,$(RESULTS_DIR_2)/results.jtl'\
+}
